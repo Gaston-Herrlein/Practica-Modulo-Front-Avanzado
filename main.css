@@ -6,27 +6,44 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-img.nav-brand-img {
-    height: 50px;
-    width: auto;
+.banner {
+    height: 90dvh;
 }
 
-.flex-row {
-    display: flex;
-    flex-direction: row;
-}
-header.flex-row {
-    justify-content: space-between;
-    align-items: center;
+.banner-container {
+    position: relative;
+    top: 40%;
 }
 
-a{
-    color: black;
-    text-decoration: none;
-}
-
-li {
+.banner-h2 {
     display: block;
     font-size: 2rem;
-    margin: 0 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.banner-h1 {
+    text-align: center
+}
+
+.button-primary {
+    font-size: 1rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem;
+    border: solid 2px;
+    border-radius: 15px;
+}
+
+button:hover {
+    font-size:  1.2rem;
+}
+
+button:focus {
+    background-color: rgba(240, 240, 240, 0.5);
+}
+
+.mt-l {
+    margin-top: 2rem;
 }
