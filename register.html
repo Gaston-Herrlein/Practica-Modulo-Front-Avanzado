@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WallaPOP Register</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="./navBar/style/navBar.css" />
+    <link rel="stylesheet" href="./ad/style/ads.css" />
+    <link rel="stylesheet" href="./register/style/register.css">
+  </head>
+  <body>
+    <header class="flex-row">
+      <img
+        class="nav-brand-img"
+        src="./assets/image/wallapop.png"
+        alt="wallapop-icon"
+      />
+      <nav id="navBar-home"></nav>
+    </header>
+    
+    <div class="flex-column flex-center mt-xxl">
+      <h1>Register</h1>
+      <form id="form-register">
+          <br>
+          <input id="in-email" type="text" class="email" placeholder="email">
+          <br/> 
+          <input id="in-psw" type="password" class="pwd" placeholder="password">
+          <br>
+          <input id="confirm-psw" type="password" class="pwd" placeholder="confirm password">
+          <br/>
+          <button id="btn-register" class="register mt-s">
+            register
+          </button>
+      </form>
+
+    <script type="module" src="navBar-home.js"></script>
+    <script type="module" src="register-home.js"></script>
+    <script type="module" src="root.js"></script>
+  </body>
+</html>
