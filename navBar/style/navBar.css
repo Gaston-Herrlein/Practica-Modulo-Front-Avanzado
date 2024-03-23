@@ -1,0 +1,9 @@
+img.nav-brand-img {
+  height: 50px;
+  width: auto;
+}
+
+header.flex-row {
+  justify-content: space-between;
+  align-items: center;
+}

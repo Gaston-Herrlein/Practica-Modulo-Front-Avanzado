@@ -1,0 +1,16 @@
+.banner {
+  height: 90dvh;
+}
+.banner-container {
+  position: relative;
+  top: 40%;
+}
+.banner-h2 {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+.banner-h1 {
+  text-align: center;
+}
