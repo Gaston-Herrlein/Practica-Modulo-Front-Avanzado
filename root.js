@@ -2,6 +2,8 @@
  * Carpeta raiz donde estan alojados los manejadores de eventos globales
  */
 
+import { logOutController } from "./logout/logout-controller.js";
+
 function handleRegisterButton() {
   const navBarRegister = document.getElementById("register");
   if (navBarRegister) {
@@ -24,6 +26,8 @@ function handleCloseSessionButton() {
   const navBarClose = document.getElementById("closeSession");
   if (navBarClose) {
     navBarClose.addEventListener("click", () => {
+      logOutController();
+      alert("closed session");
       window.location.href = "index.html";
     });
   }
