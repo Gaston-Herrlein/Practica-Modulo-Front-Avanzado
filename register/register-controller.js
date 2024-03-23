@@ -53,11 +53,8 @@ export function registerController() {
 
     try {
       await createUser(email, password);
-      console.log("Te has registrado correctamente");
-
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 2000);
+      alert("Te has registrado correctamente");
+      window.location.href = "login.html";
     } catch (error) {
       console.log(error);
     }
