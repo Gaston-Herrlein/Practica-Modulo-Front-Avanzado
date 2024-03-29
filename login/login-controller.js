@@ -25,10 +25,6 @@ export const loginController = () => {
     const formData = new FormData(loginForm);
     const email = formData.get("email");
     const password = formData.get("password");
-    console.log(loginForm);
-    console.log(formData);
-    console.log(email);
-    console.log(password);
 
     return {
       email: email,
