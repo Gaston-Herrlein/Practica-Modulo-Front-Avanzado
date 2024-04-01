@@ -6,6 +6,7 @@
     <title>Create Ads</title>
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="./navBar/style/navBar.css" />
+    <link rel="stylesheet" href="./create/style/create.css" />
   </head>
   <body>
     <header class="flex-row">
@@ -18,8 +19,47 @@
       </a>
       <nav id="navBar-home"></nav>
     </header>
-    <div id="crerate" class="create">
-        <form action=""></form>
+    <div class="flex-row flex-center create">
+      <form id="adCreation" class="flex-column flex-center">
+        <div class="mt-s">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div class="mt-s">
+          <label for="description"></label>
+          <textarea
+            name="description"
+            id="description"
+            cols="30"
+            rows="10"
+            required
+          ></textarea>
+        </div>
+        <div class="mt-s">
+          <label for="price">Price</label>
+          <input type="number" name="price" id="price" />
+        </div>
+        <div class="mt-s">
+          <label for="tags">Tags</label>
+          <input type="text" name="tags" id="tags" />
+        </div>
+        <div class="mt-s">
+          <label for="picture">Picture</label>
+          <input type="text" name="picture" id="picture" />
+        </div>
+        <div class="mt-s">
+          <label for="buy">
+            <input type="radio" id="buy" name="buy" />
+            Buy
+          </label>
+          <label for="sell">
+            <input type="radio" id="sell" name="buy" />
+            Sell
+          </label>
+        </div>
+
+        <button type="submit">Crear Ad</button>
+      </form>
     </div>
 
     <script type="module" src="navBar-home.js"></script>
