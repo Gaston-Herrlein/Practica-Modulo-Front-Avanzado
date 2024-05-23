@@ -47,6 +47,10 @@ button:focus {
   margin-top: 5rem;
 }
 
+.mr-auto {
+  margin-right: auto;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
