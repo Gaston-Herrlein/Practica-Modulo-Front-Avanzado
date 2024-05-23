@@ -69,7 +69,9 @@ export function registerController() {
       alert("Te has registrado correctamente");
       window.location.href = "login.html";
     } catch (error) {
-      console.log(error);
+      showFormErrors({ message: error.message });
     }
   }
+
+  function adapterObject() {}
 }
