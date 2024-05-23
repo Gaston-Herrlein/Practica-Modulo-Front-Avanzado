@@ -1,4 +1,8 @@
 import { createUser } from "./register-model.js";
+import {
+  showError,
+  hiddenError,
+} from "../notification/notification-controller.js";
 
 export function registerController() {
   const register = document.getElementById("form-register");
@@ -10,27 +14,31 @@ export function registerController() {
   });
 
   function handleRegisterFormSubmit(register) {
-    let errors = [];
+    let notification = { errors: {} };
 
     if (!isEmailValid(register)) {
-      errors.push("el email no tiene un formato correcto");
+      Object.assign(notification.errors, {
+        email: "El email no tiene un formato correcto.",
+      });
     }
 
     if (!arePasswordsEqual(register)) {
-      errors.push("las contraseñas no son iguales");
+      Object.assign(notification.errors, {
+        psw: "Las contraseñas no son iguales.",
+      });
     }
 
-    showFormErrors(errors);
-
-    if (errors.length === 0) {
+    if (Object.keys(notification.errors).length === 0) {
       registerUser(register);
+    } else {
+      showFormErrors(notification.errors);
     }
   }
 
   function isEmailValid(signupForm) {
     const email = signupForm.querySelector("#in-email");
     const emailRegExp = new RegExp(
-      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+      /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/
     );
 
     return emailRegExp.test(email.value);
@@ -44,7 +52,12 @@ export function registerController() {
   }
 
   function showFormErrors(errors) {
-    console.log(errors);
+    const notificationWrapper = document.querySelector("#notification-wrapper");
+    showError(notificationWrapper, errors);
+
+    setTimeout(() => {
+      hiddenError(notificationWrapper);
+    }, 3000);
   }
 
   async function registerUser(register) {
