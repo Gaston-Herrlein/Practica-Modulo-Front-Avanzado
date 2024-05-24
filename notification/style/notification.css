@@ -16,7 +16,7 @@
 }
 
 .notification.success {
-  background-color: var(--primary);
+  background-color: lime;
   border: solid 2px lightgray;
 }
 

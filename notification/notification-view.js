@@ -6,6 +6,14 @@ export function errorMessageView(message) {
     `;
 }
 
+export function succesMessageView(message) {
+  return `
+      <div class="notification success">
+        <span>${message}</span>
+      </div>
+    `;
+}
+
 function adapterMessage(message) {
   let element = "";
   for (let key in message) {

@@ -1,7 +1,8 @@
 import { createUser } from "./register-model.js";
 import {
   showError,
-  hiddenError,
+  hiddenMessage,
+  showSuccess,
 } from "../notification/notification-controller.js";
 
 export function registerController() {
@@ -56,8 +57,19 @@ export function registerController() {
     showError(notificationWrapper, errors);
 
     setTimeout(() => {
-      hiddenError(notificationWrapper);
+      hiddenMessage(notificationWrapper);
     }, 3000);
+  }
+
+  //ME QUEDE ACAAAAAAAAAA...... NO MUESTRA EL MENSAGE DE QUE FUE TODO BIEN
+  function showCreateSuccess(message) {
+    const notificationWrapper = document.querySelector("#notification-wrapper");
+    showSuccess(notificationWrapper, message);
+
+    setTimeout(() => {
+      hiddenMessage(notificationWrapper);
+      window.location.href = "login.html";
+    }, 2000);
   }
 
   async function registerUser(register) {
@@ -66,8 +78,8 @@ export function registerController() {
 
     try {
       await createUser(email, password);
-      alert("Te has registrado correctamente");
-      window.location.href = "login.html";
+      showCreateSuccess("Usuario creado correctamente");
+      // window.location.href = "login.html";
     } catch (error) {
       showFormErrors({ message: error.message });
     }
