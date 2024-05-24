@@ -4,6 +4,7 @@ import {
   hiddenMessage,
   showSuccess,
 } from "../notification/notification-controller.js";
+import { showSpinner, hiddenSpinner } from "../spinner/spinnerrController.js";
 
 export function registerController() {
   const register = document.getElementById("form-register");
@@ -61,7 +62,6 @@ export function registerController() {
     }, 3000);
   }
 
-  //ME QUEDE ACAAAAAAAAAA...... NO MUESTRA EL MENSAGE DE QUE FUE TODO BIEN
   function showCreateSuccess(message) {
     const notificationWrapper = document.querySelector("#notification-wrapper");
     showSuccess(notificationWrapper, message);
@@ -76,14 +76,16 @@ export function registerController() {
     const email = register.querySelector("#in-email").value;
     const password = register.querySelector("#in-psw").value;
 
+    const spinnerWrapp = document.querySelector("#spinner-wrapper");
+    showSpinner(spinnerWrapp);
+
     try {
       await createUser(email, password);
+      hiddenSpinner(spinnerWrapp);
       showCreateSuccess("Usuario creado correctamente");
-      // window.location.href = "login.html";
     } catch (error) {
+      hiddenSpinner(spinnerWrapp);
       showFormErrors({ message: error.message });
     }
   }
-
-  function adapterObject() {}
 }
