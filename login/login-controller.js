@@ -4,6 +4,7 @@ import {
   hiddenMessage,
   showSuccess,
 } from "../notification/notification-controller.js";
+import { showSpinner, hiddenSpinner } from "../spinner/spinnerrController.js";
 
 export const loginController = () => {
   const login = document.getElementById("form-login");
@@ -21,11 +22,15 @@ export const loginController = () => {
   });
 
   const submitLogin = async ({ email, password }) => {
+    const spinnerWrapp = document.querySelector("#spinner-wrapper");
+    showSpinner(spinnerWrapp);
     try {
       const jwt = await loginUser(email, password);
+      hiddenSpinner(spinnerWrapp);
       showCreateSuccess("Login OK!");
       localStorage.setItem("token", jwt);
     } catch (err) {
+      hiddenSpinner(spinnerWrapp);
       showLoginErrors({ error: err });
     }
   };
