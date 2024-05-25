@@ -1,6 +1,7 @@
 .create {
-  background-color: antiquewhite;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  background-color: rgba(16, 222, 198, 0.5);
+  width: 40%;
+  margin: auto;
+  padding: 1rem 0px;
+  border-radius: 50px;
 }

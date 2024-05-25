@@ -2,18 +2,6 @@ export const createAd = async (ad) => {
   const url = "http://localhost:8000/api/ads";
   const token = localStorage.getItem("token");
 
-  // const dummyData = {
-  //   author: "keepcoding",
-  //   comments: [],
-  //   image: "https://pbs.twimg.com/media/D1KNUQ8VAAAEx8L.jpg",
-  //   likes: [],
-  // };
-
-  // const body = {
-  //   ad: ad,
-  //   ...dummyData,
-  // };
-
   let response;
   try {
     response = await fetch(url, {

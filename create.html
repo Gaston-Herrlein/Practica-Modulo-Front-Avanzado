@@ -17,36 +17,50 @@
     </a>
     <nav id="navBar-home"></nav>
   </header>
-  <div class="flex-row flex-center create">
+  <div class="flex-row center create">
     <form id="adCreation" class="flex-column flex-center">
       <div class="mt-s">
-        <label for="name">Name</label>
+        <label for="name">Titulo</label>
         <input type="text" name="name" id="name" />
       </div>
       <div class="mt-s">
-        <label for="description"></label>
         <textarea name="description" id="description" cols="30" rows="10" required></textarea>
+        <br>
+        <label for="description">Descripcion</label>
       </div>
       <div class="mt-s">
-        <label for="price">Price</label>
+        <label for="price">Precio</label>
         <input type="number" name="price" id="price" />
       </div>
       <div class="mt-s">
-        <label for="tags">Tags</label>
-        <input type="text" name="tags" id="tags" />
+        <label for="category">Categoria</label>
+        <select name="category" size="1" multiple>
+          <option id="Coche">Coche</option>
+          <option id="Moto">Moto</option>
+          <option id="Movil">Movil</option>
+          <option id="Electronica">Electronica</option>
+          <option id="Electrodimestico">Electrodimestico</option>
+          <option id="Informatica">Informatica</option>
+          <option id="Consola">Consola y Juegos</option>
+          <option id="Inmobiliaria">Inmobiliaria</option>
+          <option id="Deporte">Deporte</option>
+          <option id="Moda">Moda</option>
+          <option id="Herramientas">Herramientas</option>
+          <option id="Libros">Libros</option>
+        </select>
       </div>
       <div class="mt-s">
-        <label for="picture">Picture</label>
-        <input type="text" name="picture" id="picture" />
+        <label for="image">Foto</label>
+        <input type="text" name="image" id="image" placeholder="foto.jpg" />
       </div>
       <div class="mt-s">
         <label for="buy">
           <input type="radio" id="buy" name="buy" />
-          Buy
+          Compra
         </label>
         <label for="sell">
           <input type="radio" id="sell" name="buy" />
-          Sell
+          Venta
         </label>
       </div>
 
