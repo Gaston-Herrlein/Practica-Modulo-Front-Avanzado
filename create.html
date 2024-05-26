@@ -5,12 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create Ads</title>
-  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="./main.css" />
   <link rel="stylesheet" href="./navBar/style/navBar.css" />
   <link rel="stylesheet" href="./createAd/style/createAd.css" />
+  <link rel="stylesheet" href="./notification/style/notification.css">
+  <link rel="stylesheet" href="./spinner/style/spinner.css">
 </head>
 
 <body>
+  <div id="notification-wrapper" class="notification-wrapper hidden"></div>
+  <div id="spinner-wrapper" class="spinner-wrapper hidden"></div>
   <header class="flex-row">
     <a href="index.html">
       <img class="nav-brand-img" src="./assets/image/wallapop.png" alt="wallapop-icon" />
@@ -21,7 +25,7 @@
     <form id="adCreation" class="flex-column flex-center">
       <div class="mt-s">
         <label for="name">Titulo</label>
-        <input type="text" name="name" id="name" />
+        <input type="text" name="name" id="name" required />
       </div>
       <div class="mt-s">
         <textarea name="description" id="description" cols="30" rows="10" required></textarea>
@@ -30,23 +34,23 @@
       </div>
       <div class="mt-s">
         <label for="price">Precio</label>
-        <input type="number" name="price" id="price" />
+        <input type="number" name="price" id="price" required />
       </div>
       <div class="mt-s">
         <label for="category">Categoria</label>
-        <select name="category" size="1" multiple>
-          <option id="Coche">Coche</option>
-          <option id="Moto">Moto</option>
-          <option id="Movil">Movil</option>
-          <option id="Electronica">Electronica</option>
-          <option id="Electrodimestico">Electrodimestico</option>
-          <option id="Informatica">Informatica</option>
-          <option id="Consola">Consola y Juegos</option>
-          <option id="Inmobiliaria">Inmobiliaria</option>
-          <option id="Deporte">Deporte</option>
-          <option id="Moda">Moda</option>
-          <option id="Herramientas">Herramientas</option>
-          <option id="Libros">Libros</option>
+        <select name="category" size="1" required multiple>
+          <option id="Coche" value="Coche">Coche</option>
+          <option id="Moto" value="Moto">Moto</option>
+          <option id="Movil" value="Movil">Movil</option>
+          <option id="Electronica" value="Electronica">Electronica</option>
+          <option id="Electrodimestico" value="Electrodimestico">Electrodimestico</option>
+          <option id="Informatica" value="Informatica">Informatica</option>
+          <option id="Consola" value="Consola">Consola y Juegos</option>
+          <option id="Inmobiliaria" value="Inmobiliaria">Inmobiliaria</option>
+          <option id="Deporte" value="Deporte">Deporte</option>
+          <option id="Moda" value="Moda">Moda</option>
+          <option id="Herramientas" value="Herramientas">Herramientas</option>
+          <option id="Libros" value="Libros">Libros</option>
         </select>
       </div>
       <div class="mt-s">
@@ -55,11 +59,11 @@
       </div>
       <div class="mt-s">
         <label for="buy">
-          <input type="radio" id="buy" name="buy" />
+          <input type="radio" id="buy" name="buy" value="buy" />
           Compra
         </label>
         <label for="sell">
-          <input type="radio" id="sell" name="buy" />
+          <input type="radio" id="sell" name="buy" value="sell" />
           Venta
         </label>
       </div>
