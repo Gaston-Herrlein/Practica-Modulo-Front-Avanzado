@@ -8,7 +8,7 @@ export async function adsController() {
     const ads = await getAds();
     if (bannerNodo.classList.value === "banner") {
       bannerNodo.classList.remove("banner");
-      bannerNodo.classList.add("grid", "mt-xxl");
+      bannerNodo.classList.add("grid");
     }
     bannerNodo.innerHTML = "";
     renderAds(ads, bannerNodo);
@@ -21,14 +21,17 @@ export async function adsController() {
 function renderAds(Ads, AdsList) {
   Ads.forEach((ad) => {
     const adItem = document.createElement("div");
-    adItem.classList.add("flex-column", "flex-center", "mt-l");
+    adItem.classList.add("flex-column", "center", "mt-l");
     adItem.innerHTML = buildAdsList(ad);
     AdsList.appendChild(adItem);
   });
 }
 
 function renderErrorAds(errorList) {
-  const adItem = document.createElement("div");
-  adItem.innerHTML = buildAdsError();
-  errorList.appendChild(adItem);
+  const notificationWrapper = document.querySelector("#notification-wrapper");
+  notificationWrapper.classList.add("flex-column", "center");
+  notificationWrapper.innerHTML = buildAdsError();
+  errorList.appendChild(notificationWrapper);
 }
+
+function rendereSpinner() {}

@@ -1,10 +1,12 @@
 function parseAds(data) {
   return data.map((data) => ({
-    title: data.name,
+    title: data.title,
     description: data.description,
-    tags: data.tag,
     price: data.price,
-    picture: data.img,
+    type: data.type,
+    category: data.category,
+    picture: data.image !== "" ? data.image : "not-found-image.jpg",
+    id: data.id,
   }));
 }
 
