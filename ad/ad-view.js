@@ -1,6 +1,6 @@
 export function buildAdsList(ads) {
   return `
-  <a href="/productDetail.html?id=${ads.id}">
+  <a href="/adDetail.html?id=${ads.id}">
     <div class="card-container flex-column center">
       <img class="img-ads mb-s" width="200px" src="${
         "./assets/image/" + ads.picture
