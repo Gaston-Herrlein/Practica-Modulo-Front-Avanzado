@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WallaPOP</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="./navBar/style/navBar.css" />
+    <link rel="stylesheet" href="./ad/style/ads.css" />
+    <link rel="stylesheet" href="./notification/style/notification.css">
+    <link rel="stylesheet" href="./spinner/style/spinner.css">
+</head>
+
+<body>
+    <header class="flex-row">
+        <a href="index.html">
+            <img class="nav-brand-img" src="./assets/image/wallapop.png" alt="wallapop-icon" />
+        </a>
+        <nav id="navBar-home"></nav>
+    </header>
+
+    <div id="notification-wrapper" class="notification-wrapper hidden"></div>
+    <div id="spinner-wrapper" class="spinner-wrapper hidden"></div>
+
+    <div id="adContainer" class="flex center">
+    </div>
+
+    <script type="module" src="navBar-home.js"></script>
+    <script type="module" src="adDetail-home.js"></script>
+    <script type="module" src="root.js"></script>
+</body>
+
+</html>

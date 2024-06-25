@@ -1,0 +1,56 @@
+.banner {
+  height: 90dvh;
+}
+.banner-container {
+  position: relative;
+  top: 40%;
+}
+.banner-h2 {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+.banner-h1 {
+  text-align: center;
+}
+
+.img-ads {
+  width: 100px;
+  height: auto;
+}
+
+div.hr {
+  width: calc(100% + 1rem);
+  border-width: 0px 0px 1px 0px;
+  border-color: rgb(16, 222, 198);
+  border-style: none none solid none;
+}
+
+div.hr + div.container {
+  color: gray;
+}
+
+.card-container {
+  width: 100%;
+  max-width: 215px;
+  min-width: 180px;
+  height: 250px;
+  border: solid 3px rgb(16, 222, 198);
+  border-radius: 15px;
+  padding: 0.5rem;
+}
+
+.card-container:hover {
+  .img-ads {
+    width: 120px;
+  }
+}
+
+.card-description {
+  height: 100%;
+}
+
+div.card-container > p {
+  overflow: hidden;
+}
