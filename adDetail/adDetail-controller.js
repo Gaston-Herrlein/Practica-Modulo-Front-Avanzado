@@ -9,22 +9,6 @@ import { getProductById } from "./adDetail-model.js";
 import { buildAd } from "./adDetail-view.js";
 import { showSpinner, hiddenSpinner } from "../spinner/spinnerrController.js";
 
-/*
-Compruevo que exista ID
-    |
-     -> Si no existe redirecciono al index.html ✓ 
-     -> Si existe:
-                Leo URL para sacar ID ✓
-                Llamo a getProductById() con el ID del producto ✓
-                Compruebo que exista un anuncio con ese ID
-                        |
-                         -> Si no existe:
-                                - Muestro mensaje de error
-                                - Redirecciono a index.html
-                         -> Si existe:
-                                - Llamo a buildAd() con el objeto del anuncio
- */
-
 const adNodo = document.getElementById("adContainer");
 const spinnerWrapp = document.querySelector("#spinner-wrapper");
 
@@ -54,7 +38,7 @@ export async function adDetailController() {
       }
     } catch {
       hiddenSpinner(spinnerWrapp);
-      showAdError({ Error: err });
+      showAdDetailError({ Error: err });
     }
   }
 }
@@ -125,13 +109,4 @@ function showAdsSuccess(message) {
   setTimeout(() => {
     hiddenMessage(notificationWrapper);
   }, 1000);
-}
-
-function showAdError(errors) {
-  const notificationWrapper = document.querySelector("#notification-wrapper");
-  showError(notificationWrapper, errors);
-
-  setTimeout(() => {
-    hiddenMessage(notificationWrapper);
-  }, 3000);
 }
