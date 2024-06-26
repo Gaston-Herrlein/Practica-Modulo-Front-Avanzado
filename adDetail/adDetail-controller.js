@@ -35,21 +35,26 @@ export async function adDetailController() {
     const userId = getUserId();
     const adId = getAdId();
 
-    showSpinner(spinnerWrapp);
-    const ad = await getProductById(adId);
-    if (Object.keys(ad).length === 0) {
-      hiddenSpinner(spinnerWrapp);
-      showAdDetailError({ error: "Ad not found" });
-    } else {
-      if (adNodo.classList.value === "adContainer") {
-        adNodo.classList.remove("adContainer");
-        adNodo.classList.add("grid");
-      }
-      adNodo.innerHTML = "";
+    try {
+      showSpinner(spinnerWrapp);
+      const ad = await getProductById(adId);
+      if (Object.keys(ad).length === 0) {
+        hiddenSpinner(spinnerWrapp);
+        showAdDetailError({ error: "Anuncio no encontrado" });
+      } else {
+        if (adNodo.classList.value === "adContainer") {
+          adNodo.classList.remove("adContainer");
+          adNodo.classList.add("grid");
+        }
+        adNodo.innerHTML = "";
 
+        hiddenSpinner(spinnerWrapp);
+        showAdsSuccess("Anuncios recibidos correctamente");
+        renderAd(ad, adNodo);
+      }
+    } catch {
       hiddenSpinner(spinnerWrapp);
-      showAdsSuccess("Anuncios recibidos correctamente");
-      renderAd(ad, adNodo);
+      showAdError({ Error: err });
     }
   }
 }
@@ -120,4 +125,13 @@ function showAdsSuccess(message) {
   setTimeout(() => {
     hiddenMessage(notificationWrapper);
   }, 1000);
+}
+
+function showAdError(errors) {
+  const notificationWrapper = document.querySelector("#notification-wrapper");
+  showError(notificationWrapper, errors);
+
+  setTimeout(() => {
+    hiddenMessage(notificationWrapper);
+  }, 3000);
 }
