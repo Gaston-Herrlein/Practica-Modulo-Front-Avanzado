@@ -7,6 +7,7 @@ import {
 } from "../notification/notification-controller.js";
 import { getProductById } from "./adDetail-model.js";
 import { buildAd } from "./adDetail-view.js";
+import { showSpinner, hiddenSpinner } from "../spinner/spinnerrController.js";
 
 /*
 Compruevo que exista ID
@@ -25,16 +26,19 @@ Compruevo que exista ID
  */
 
 const adNodo = document.getElementById("adContainer");
+const spinnerWrapp = document.querySelector("#spinner-wrapper");
 
 export async function adDetailController() {
   if (!getAdId()) {
     showAdDetailError({ error: "Anuncio no encotrado" });
   } else {
-    //ME QUEDE ACA ······ UNA VEZ OBTENIDO EL ID, HAY QUE OBTENER LOS DATOS DEL ANUNCIO DESDE EL API
     const userId = getUserId();
     const adId = getAdId();
+
+    showSpinner(spinnerWrapp);
     const ad = await getProductById(adId);
     if (Object.keys(ad).length === 0) {
+      hiddenSpinner(spinnerWrapp);
       showAdDetailError({ error: "Ad not found" });
     } else {
       if (adNodo.classList.value === "adContainer") {
@@ -43,6 +47,7 @@ export async function adDetailController() {
       }
       adNodo.innerHTML = "";
 
+      hiddenSpinner(spinnerWrapp);
       showAdsSuccess("Anuncios recibidos correctamente");
       renderAd(ad, adNodo);
     }
