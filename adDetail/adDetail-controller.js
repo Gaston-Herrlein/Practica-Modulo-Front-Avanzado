@@ -8,6 +8,7 @@ import {
 import { getProductById } from "./adDetail-model.js";
 import { buildAd } from "./adDetail-view.js";
 import { showSpinner, hiddenSpinner } from "../spinner/spinnerrController.js";
+import { deleteButtonController } from "./deleteButton/adDeleteButton-controller.js";
 
 const adNodo = document.getElementById("adContainer");
 const spinnerWrapp = document.querySelector("#spinner-wrapper");
@@ -16,7 +17,6 @@ export async function adDetailController() {
   if (!getAdId()) {
     showAdDetailError({ error: "Anuncio no encotrado" });
   } else {
-    const userId = getUserId();
     const adId = getAdId();
 
     try {
@@ -36,7 +36,7 @@ export async function adDetailController() {
         showAdsSuccess("Anuncios recibidos correctamente");
         renderAd(ad, adNodo);
       }
-    } catch {
+    } catch (err) {
       hiddenSpinner(spinnerWrapp);
       showAdDetailError({ Error: err });
     }
@@ -51,23 +51,17 @@ function getAdId() {
 
 function getUserId() {
   const jwt = window.localStorage.getItem("token");
-  //Id de usuario
   const { userId } = decodeJwtToken(jwt);
   return userId;
 }
 
-function handleDeleteAdButton() {
-  if (isLogin()) {
-    const jwt = window.localStorage.getItem("token");
+function handlerDeleteAdButton() {
+  //Logica para eliminar el anuncio
+}
 
-    if (jwt) {
-      const userInfo = decodeJwtToken(jwt);
-
-      if (userInfo.userId === getAdId()) {
-        addRemoveButton(nodo);
-      }
-    }
-  }
+function isOwner() {
+  // Se usa la doble comparacion ya que adID es un string y UserID un number
+  return getUserId() == getAdId();
 }
 
 function renderAd(ad, container) {
@@ -75,6 +69,15 @@ function renderAd(ad, container) {
   adItem.classList.add("flex-column", "center", "mt-l");
   adItem.innerHTML = buildAd(ad);
   container.appendChild(adItem);
+  if (isOwner()) {
+    const container = document.querySelector(".card-container");
+    addRemoveButton(container);
+
+    //Creado el boton le añado el escuchador de eventos
+    document
+      .querySelector("#deleteButton")
+      .addEventListener("click", deleteButtonController);
+  }
 }
 
 function decodeJwtToken(token) {

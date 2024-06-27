@@ -17,4 +17,9 @@ export function buildAd(ad) {
   `;
 }
 
-export function addRemoveButton(nodo) {}
+export function addRemoveButton(nodo) {
+  const deleteButton = document.createElement("button");
+  deleteButton.id = "deleteButton";
+  deleteButton.textContent = "Delete advert";
+  nodo.appendChild(deleteButton);
+}
