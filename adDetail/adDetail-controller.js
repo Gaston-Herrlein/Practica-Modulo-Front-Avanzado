@@ -59,9 +59,9 @@ function handlerDeleteAdButton() {
   //Logica para eliminar el anuncio
 }
 
-function isOwner() {
+function isOwner(userId) {
   // Se usa la doble comparacion ya que adID es un string y UserID un number
-  return getUserId() == getAdId();
+  return getUserId() == userId;
 }
 
 function renderAd(ad, container) {
@@ -69,7 +69,7 @@ function renderAd(ad, container) {
   adItem.classList.add("flex-column", "center", "mt-l");
   adItem.innerHTML = buildAd(ad);
   container.appendChild(adItem);
-  if (isOwner()) {
+  if (isOwner(ad.userId)) {
     const container = document.querySelector(".card-container");
     addRemoveButton(container);
 

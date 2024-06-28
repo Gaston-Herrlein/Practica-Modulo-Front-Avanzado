@@ -7,6 +7,7 @@ function parseDetailAd(data) {
     category: data.category,
     picture: data.image !== "" ? data.image : "not-found-image.jpg",
     id: data.id,
+    userId: data.userId,
   };
 }
 
