@@ -1,5 +1,5 @@
-function parseAds(data) {
-  return data.map((data) => ({
+function parseDetailAd(data) {
+  return {
     title: data.title,
     description: data.description,
     price: data.price,
@@ -7,13 +7,14 @@ function parseAds(data) {
     category: data.category,
     picture: data.image !== "" ? data.image : "not-found-image.jpg",
     id: data.id,
-  }));
+    userId: data.userId,
+  };
 }
 
-export async function getAds(adId = "") {
+export async function getProductById(adId = "") {
   const url = `http://localhost:8000/api/ads/${adId}`;
   const token = window.localStorage.getItem("token");
-  let ads = [];
+  let ad = {};
   try {
     const response = await fetch(url, {
       headers: {
@@ -21,10 +22,13 @@ export async function getAds(adId = "") {
       },
     });
     const data = await response.json();
-    ads = parseAds(data);
+    if (Object.keys(data).length === 0) {
+      return ad;
+    }
+    ad = parseDetailAd(data);
   } catch (error) {
     console.log(error);
-    throw new Error("Error getting Ads");
+    return error;
   }
-  return ads;
+  return ad;
 }

@@ -1,16 +1,17 @@
 export function buildnavBar(isLogin) {
   let navBar_Element = `
-        <ul class="flex-row">
-            <li id="register"><a href="register.html">Register</a></li>
-            <li id="login"><a href="login.html">Sing In</a></li>
-        </ul>
+      <ul class="flex-row">
+        <li id="register"><a href="register.html">Register</a></li>
+        <li id="login"><a href="login.html">Sing In</a></li>
+      </ul>
     `;
   if (isLogin) {
     navBar_Element = `
-        <ul class="flex-row">
-            <li id="closeSession"><a href="index.html">Close</a></li>
-        </ul>
-        `;
+      <ul class="flex-row">
+        <li id="create"><a href="create.html">Create Ad</a></li>
+        <li id="closeSession"><a href="index.html">Close</a></li>
+      </ul>
+    `;
   }
   return navBar_Element;
 }

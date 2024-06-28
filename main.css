@@ -43,8 +43,20 @@ button:focus {
   margin-top: 2rem;
 }
 
+.mt-xl {
+  margin-top: 3rem;
+}
+
 .mt-xxl {
   margin-top: 5rem;
+}
+
+.mb-s {
+  margin-bottom: 0.3rem;
+}
+
+.mr-auto {
+  margin-right: auto;
 }
 
 .flex-row {
@@ -57,8 +69,15 @@ button:focus {
   flex-direction: column;
 }
 
-.flex-center {
+.flex-row.center,
+.flex-column.center {
   justify-content: center;
+  align-items: center;
+}
+
+.flex-row.start,
+.flex-column.start {
+  justify-content: start;
   align-items: center;
 }
 

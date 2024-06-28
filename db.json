@@ -1,0 +1,36 @@
+{
+  "ads": [
+    {
+      "title": "Laptop Lenovo",
+      "description": "Vende Lenovo Ideapad 15fs excelente estado.",
+      "price": "123",
+      "type": "buy",
+      "category": "Electrónica",
+      "image": "",
+      "userId": 1,
+      "updatedAt": "Thu May 23 2024 15:16:01 GMT+0200 (hora de verano de Europa central)",
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "username": "dummy@email.com",
+      "password": "$2b$10$4XeElLnM4FVctDLuKMG06.IDHCbj9gW2AOCyooYKGh.HfPepu9anO",
+      "id": 1
+    }
+  ],
+  "tags": [
+    "Coche",
+    "Moto",
+    "Movil",
+    "Electrónica",
+    "Electrodomestico",
+    "Informatica",
+    "Consolas y juegos",
+    "Inmobiliaria",
+    "Deporte",
+    "Moda",
+    "Herramientas",
+    "Libros"
+  ]
+}

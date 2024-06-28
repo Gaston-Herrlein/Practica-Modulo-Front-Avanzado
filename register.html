@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WallaPOP Register</title>
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="./navBar/style/navBar.css" />
-    <link rel="stylesheet" href="./ad/style/ads.css" />
-    <link rel="stylesheet" href="./register/style/register.css">
-  </head>
-  <body>
-    <header class="flex-row">
-      <a href="index.html">
-        <img
-          class="nav-brand-img"
-          src="./assets/image/wallapop.png"
-          alt="wallapop-icon"
-        />
-      </a>
-      <nav id="navBar-home"></nav>
-    </header>
-    
-    <div class="flex-column flex-center mt-xxl">
-      <h1>Register</h1>
-      <form id="form-register">
-          <br>
-          <input id="in-email" type="text" class="email" placeholder="email">
-          <br/> 
-          <input id="in-psw" type="password" class="pwd" placeholder="password">
-          <br>
-          <input id="confirm-psw" type="password" class="pwd" placeholder="confirm password">
-          <br/>
-          <button id="btn-register" class="register mt-s">
-            register
-          </button>
-      </form>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WallaPOP Register</title>
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="./navBar/style/navBar.css" />
+  <link rel="stylesheet" href="./ad/style/ads.css" />
+  <link rel="stylesheet" href="./register/style/register.css">
+  <link rel="stylesheet" href="./notification/style/notification.css">
+  <link rel="stylesheet" href="./spinner/style/spinner.css">
+</head>
+
+<body>
+  <div id="notification-wrapper" class="notification-wrapper hidden"></div>
+  <div id="spinner-wrapper" class="spinner-wrapper hidden"></div>
+  <header class="flex-row">
+    <a href="index.html">
+      <img class="nav-brand-img" src="./assets/image/wallapop.png" alt="wallapop-icon" />
+    </a>
+    <nav id="navBar-home"></nav>
+  </header>
+
+  <div class="flex-column center mt-xxl">
+    <h1>Register</h1>
+    <form id="form-register">
+      <br>
+      <input id="in-email" type="text" class="email" placeholder="email" required>
+      <br />
+      <input id="in-psw" type="password" class="pwd" placeholder="password" required>
+      <br>
+      <input id="confirm-psw" type="password" class="pwd" placeholder="confirm password" required>
+      <br />
+      <button id="btn-register" class="register mt-s">
+        register
+      </button>
+    </form>
 
     <script type="module" src="navBar-home.js"></script>
     <script type="module" src="register-home.js"></script>
     <script type="module" src="root.js"></script>
-  </body>
+</body>
+
 </html>
