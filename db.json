@@ -4,12 +4,67 @@
       "title": "Laptop Lenovo",
       "description": "Vende Lenovo Ideapad 15fs excelente estado.",
       "price": "123",
+      "category": "Movil",
       "type": "buy",
-      "category": "Electrónica",
       "image": "",
       "userId": 1,
-      "updatedAt": "Thu May 23 2024 15:16:01 GMT+0200 (hora de verano de Europa central)",
+      "updatedAt": "2024-05-26T00:09:17.399Z",
       "id": 1
+    },
+    {
+      "title": "BMW",
+      "description": "Coche en perfecto estado",
+      "price": "987654321",
+      "category": "Coche",
+      "type": "buy",
+      "image": "BMW.jpg",
+      "userId": 1,
+      "updatedAt": "2024-05-26T00:10:46.750Z",
+      "id": 2
+    },
+    {
+      "title": "Mesa de Ping Pong",
+      "description": "Mesa de ping pong de segunda mano perfecta para jugar de forma individual o en pareja.",
+      "price": "99",
+      "category": "Deporte",
+      "type": "sell",
+      "image": "",
+      "userId": 1,
+      "updatedAt": "2024-05-26T10:58:54.753Z",
+      "id": 3
+    },
+    {
+      "title": "BMW 850 GS Adventure",
+      "description": "Vendo por cambio de cilindrada. De junio de 2021. Todo lo que trae es de casa, puños calefactables, 4 modos de conducción, ABS, cambio secuencial sin tocar embrague, suspensión electrónica, caballete central, luces led, soportes de maletas, la vendo con baul GIVI grande, caben dos cascos, gomas y kit de arrastre cambiados hace poco tiempo, kilometros reales, todos hechos en carretera, nunca ha pisado campo, siempre en garaje, revisiones todas en casa oficial, abstenerse curiosos y ofertas que no sean serias, no acepto cambio de moto. Precio algo negociable.",
+      "price": "10500",
+      "category": "Moto",
+      "type": "sell",
+      "image": "",
+      "userId": 1,
+      "updatedAt": "2024-05-26T10:59:58.219Z",
+      "id": 4
+    },
+    {
+      "title": "Jersey de rayas hombre",
+      "description": "Talla XL / 46 / 56 · Buen estado",
+      "price": "4",
+      "category": "Moda",
+      "type": "sell",
+      "image": "",
+      "userId": 1,
+      "updatedAt": "2024-05-26T11:01:08.191Z",
+      "id": 5
+    },
+    {
+      "title": "Mercedes-Benz Clase E 2001",
+      "description": "Compro, o permuto, Mercedes-Benz por kawasaki ninja zx-10R",
+      "price": "400",
+      "category": "Coche",
+      "type": "buy",
+      "image": "",
+      "userId": 1,
+      "updatedAt": "2024-05-26T11:03:30.063Z",
+      "id": 6
     }
   ],
   "users": [
