@@ -15,6 +15,7 @@ function headerLayout() {
 
   const containerBrand = document.createElement("a");
   containerBrand.setAttribute("id", "a-brand");
+  containerBrand.href = "index.html";
 
   const containerSearch = document.createElement("div");
   containerSearch.setAttribute("id", "search");
