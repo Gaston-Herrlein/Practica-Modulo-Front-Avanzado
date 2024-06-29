@@ -3,7 +3,8 @@ img.nav-brand-img {
   width: auto;
 }
 
-header.flex-row {
-  justify-content: space-between;
+ul.flex-row {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }

@@ -1,5 +1,5 @@
-import { navBarController } from "./navBar/navBar-controller.js";
+// import { navBarController } from "./navBar/navBar-controller.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  navBarController();
+  // navBarController();
 });

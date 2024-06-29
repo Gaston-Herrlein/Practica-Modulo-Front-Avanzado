@@ -1,0 +1,10 @@
+div.d-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 50px 3fr 1fr;
+  grid-template-rows: 50px 50px;
+}
+
+div#filterByCategories {
+  grid-column-start: span 3;
+}
