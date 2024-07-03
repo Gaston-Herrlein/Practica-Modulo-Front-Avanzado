@@ -1,19 +1,22 @@
 export function buildAd(ad) {
   return `
-    <div class="card-container flex-column center">
+    <div class="flex-column center mt-l mb-s">
         <img class="img-ads mb-s" width="200px" src="${
           "./assets/image/" + ad.picture
         }">
         <div class="hr"></div>
         <div class="container flex-column center">
-            <h2>${ad.title}</h2>
-            <p>Description:</p>
-            <p>${ad.description}</p>
-            <p>Categoria: ${ad.category}</p>
-            <span>${ad.type}</span>
-            <p>$${ad.price}</p>
+            <h1>${ad.title}</h1>
+            <p class="container-description"> <span class="b">Description:</span>${
+              ad.description
+            }</p>
+            
+            <p><span class="b">Categoria:</span> ${ad.category}</p>
+            <span class="b">${ad.type}</span>
+            <p class="b">$${ad.price}</p>
         </div>
     </div>
+  </div>
   `;
 }
 

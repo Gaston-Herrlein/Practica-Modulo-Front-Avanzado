@@ -55,18 +55,15 @@ function getUserId() {
   return userId;
 }
 
-function handlerDeleteAdButton() {
-  //Logica para eliminar el anuncio
-}
-
 function isOwner(userId) {
   // Se usa la doble comparacion ya que adID es un string y UserID un number
-  return getUserId() == userId;
+  return isLogin() && getUserId() == userId;
 }
 
 function renderAd(ad, container) {
   const adItem = document.createElement("div");
   adItem.classList.add("flex-column", "center", "mt-l");
+  console.log(ad);
   adItem.innerHTML = buildAd(ad);
   container.appendChild(adItem);
   if (isOwner(ad.userId)) {
